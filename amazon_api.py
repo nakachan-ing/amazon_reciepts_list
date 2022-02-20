@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[35]:
-
 
 from bs4 import BeautifulSoup
 import os
@@ -17,9 +15,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 import json
-
-
-# In[28]:
 
 
 term = input('取得したい期間を入力してください( 過去30日間/過去3か月/2015~2022): ') + "年"
@@ -44,14 +39,8 @@ browser.implicitly_wait(3)
 browser.get(url)
 
 
-# In[29]:
-
-
 login = browser.find_element_by_xpath('//*[@id="nav-link-accountList"]')
 login.click()
-
-
-# In[30]:
 
 
 # ログインIDとパスワードを環境変数として設定
@@ -70,9 +59,6 @@ time.sleep(1)
 next_page.click()
 
 
-# In[31]:
-
-
 passwd_element = browser.find_element_by_xpath('//*[@id="ap_password"]')
 passwd_element.clear()
 time.sleep(1)
@@ -88,9 +74,6 @@ submit.click()
 order_history = browser.find_element_by_xpath('//*[@id="nav-orders"]')
 time.sleep(1)
 order_history.click()
-
-
-# In[34]:
 
 
 # 領収書をダウンロードし、次のページに遷移するを繰り返してページ分実行
@@ -138,10 +121,3 @@ while True:
         break
 
 print('領収書の保存が完了しました')
-
-
-# In[ ]:
-
-
-
-
