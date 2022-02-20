@@ -22,7 +22,7 @@ term = input('取得したい期間を入力してください( 過去30日間/�
 url = 'https://www.amazon.co.jp/'
 
 # Chromeの拡張機能でPDF保存するための設定
-downloadPath ='/Users/nakadakyota/python/amazon_reciepts_list'
+downloadPath ='/Users/nakadakyota/python/downloads'
 options = webdriver.ChromeOptions()
 settings = {"recentDestinations": [{"id": "Save as PDF",
                                     "origin": "local",
